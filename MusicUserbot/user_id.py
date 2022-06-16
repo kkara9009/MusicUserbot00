@@ -2,7 +2,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 
 from config import HNDLR
-from MusicUserbot.helpers.get_file_id import get_file_id
+from AellyRbot.helpers.get_file_id import get_file_id
 
 
 @Client.on_message(filters.command(["id"], prefixes=f"{HNDLR}"))
@@ -15,16 +15,16 @@ async def showid(_, message: Message):
 
     elif chat_type in ["group", "supergroup"]:
         _id = ""
-        _id += "<b>ID group adalah</b>: " f"<code>{message.chat.id}</code>\n"
+        _id += "<b>ID group is</b>: " f"<code>{message.chat.id}</code>\n"
         if message.reply_to_message:
             _id += (
-                "<b>ID pengguna yang dibalas adalah</b>: "
+                "<b>ID replied users are</b>: "
                 f"<code>{message.reply_to_message.from_user.id}</code>\n"
             )
             file_info = get_file_id(message.reply_to_message)
         else:
             _id += (
-                "<b>ID pengguna adalah</b>: " f"<code>{message.from_user.id}</code>\n"
+                "<b>ID user is</b>: " f"<code>{message.from_user.id}</code>\n"
             )
             file_info = get_file_id(message)
         if file_info:
