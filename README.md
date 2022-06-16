@@ -37,7 +37,3 @@
 | `+playlist` | show you all current stream list|
 | `+song` | download music from youtube |
 | `+stop` |end stream (admin only)  |
-40
-
-
- admin)  |
