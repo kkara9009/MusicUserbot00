@@ -232,7 +232,6 @@ async def videoplay(client, m: Message):
                     Q = 720
                     await huehue.edit(
                         "`Only 720, 480, 360 Allowed` \n`Now streaming in 720p`"
-                    )Sekarang Streaming masuk 720p`"
                     )
             try:
                 if replied.video:
@@ -249,10 +248,10 @@ async def videoplay(client, m: Message):
                 await m.reply_photo(
                     photo="https://telegra.ph/file/613f681a511feb6d1b186.jpg",
                     caption=f"""
-**▶ Video Di Antrian Ke {pos}
-🏷️ Judul: [{songname}]({link})
+**▶ Video queue to {pos}
+🏷️ Title: [{songname}]({link})
 💡 Status: Playing
-🎧 Atas Permintaan: {m.from_user.mention}**
+🎧 On request: {m.from_user.mention}**
 """,
                 )
             else:
@@ -310,7 +309,7 @@ async def videoplay(client, m: Message):
                         await m.reply_photo(
                             photo=f"{IMAGE_THUMBNAIL}",
                             caption=f"""
-**▶ Videos In Queue Ke {pos}
+**▶ Videos In Queue to {pos}
 🏷️ Title: [{songname}]({url})
 💡 Status: Playing
 🎧 On request: {m.from_user.mention}**
