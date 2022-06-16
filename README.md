@@ -35,5 +35,9 @@
 | `+resume` | continue streaming (admin only)|
 | `+skip` | switch to next stream (admin only) |
 | `+playlist` | show you all current stream list|
-| `+song` | unduh musik dari youtube |
-| `+stop` |akhiri streaming (khusus admin)  |
+| `+song` | download music from youtube |
+| `+stop` |end stream (admin only)  |
+40
+
+
+ admin)  |
