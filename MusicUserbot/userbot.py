@@ -9,9 +9,9 @@ from config import HNDLR, SUDO_USERS
 # System Uptime
 START_TIME = datetime.utcnow()
 TIME_DURATION_UNITS = (
-    ("Sunday", 60 * 60 * 24 * 7),
-    ("Hari", 60 * 60 * 24),
-    ("Jam", 60 * 60),
+    ("Week", 60 * 60 * 24 * 7),
+    ("Day", 60 * 60 * 24),
+    ("Hour", 60 * 60),
     ("Minute", 60),
     ("Second", 1),
 )
@@ -90,7 +90,7 @@ async def restart(client, m: Message):
     await loli.edit("7")
     await loli.edit("8")
     await loli.edit("9")
-    await loli.edit("**✅ Music Userbot Di Restart Ulang**")
+    await loli.edit("**✅ Music Userbot Restarted**")
     os.execl(sys.executable, sys.executable, *sys.argv)
     quit()
 
@@ -101,24 +101,24 @@ async def help(client, m: Message):
     HELP = f"""
 <b>👋 Hallo {m.from_user.mention}!
 
-🛠 MENU BANTUAN MUSIC PLAYER
+🛠 MUSIC PLAYER HELP MENU
 
-⚡ PERINTAH UNTUK SEMUA ORANG
-• {HNDLR}play [judul lagu | link youtube | balas file audio] - untuk memutar lagu
-• {HNDLR}videoplay [judul video | link youtube | balas file video] - untuk memutar video
-• {HNDLR}playlist untuk melihat daftar putar
-• {HNDLR}ping - untuk cek status
-• {HNDLR}id - untuk melihat id pengguna
-• {HNDLR}video - judul video | link yt untuk mencari video
-• {HNDLR}song - judul lagu | link yt untuk mencari lagu
-• {HNDLR}help - untuk melihat daftar perintah
-• {HNDLR}join- untuk join | ke grup 
+⚡ ORDER FOR EVERYONE
+• {HNDLR}play [song title | youtube link | reply audio file] - to play the song
+• {HNDLR}videoplay [video title | youtube link | reply video file] - to play video
+• {HNDLR}playlist to view playlist
+• {HNDLR}ping - to check status
+• {HNDLR}id - to see user id
+• {HNDLR}video - video title | youtube link to search video
+• {HNDLR}song - song title | youtube link to search for songs
+• {HNDLR}help - to see a list of commands
+• {HNDLR}join- to join | to group 
 
-⚡ PERINTAH UNTUK SEMUA ADMIN
-• {HNDLR}resume - untuk melanjutkan pemutaran lagu atau video
-• {HNDLR}pause - untuk untuk menjeda pemutaran lagu atau video
-• {HNDLR}skip - untuk melewati lagu atau video
-• {HNDLR}end - untuk mengakhiri pemutaran</b>
+⚡ COMMANDS FOR ALL ADMINS
+• {HNDLR}resume - to continue playing a song or video
+• {HNDLR}pause - to pause the playback of a song or video
+• {HNDLR}skip - to skip songs or videos
+• {HNDLR}end - to end playback</b>
 """
     await m.reply(HELP)
 
@@ -129,26 +129,24 @@ async def repo(client, m: Message):
     REPO = f"""
 <b>👋 Hallo {m.from_user.mention}!
 
-🗃️ Music Dan Video Player UserBot
+🗃️ Music And Video Player UserBot
 
-🔰 Telegram UserBot Untuk Memutar Lagu Dan Video Di Obrolan Suara Telegram.
+🔰 Telegram UserBot To Play Songs And Videos In Telegram Voice Chat.
 
-👩‍💻 Dipersembahkan Oleh 
-• [Zaen](https://t.me/Mafia_TobaTZ)
+👩‍💻 Developer 
+• [Karan](https://t.me/kkara9009)
 
 📝 Persyaratan
 • Python 3.8+
 • FFMPEG
 • Nodejs v16+
 
-[Repo MusicUserbot](https://github.com/ZaenXP/MusicUserbot)
-
 📝 Variabel Yang Dibutuhkan
-• `API_ID` - Dapatkan Dari [my.telegram.org](https://my.telegram.org)
-• `API_HASH` - Dapatkan Dari [my.telegram.org](https://my.telegram.org)
-• `SESSION` - Sesi String Pyrogram.
-• `SUDO_USER` - ID Akun Telegram Yang Digunakan Sebagai Admin
-• `HNDLR` - Handler untuk menjalankan userbot mu
+• `API_ID` - Get From [my.telegram.org](https://my.telegram.org)
+• `API_HASH` - Get From [my.telegram.org](https://my.telegram.org)
+• `SESSION` - Pyrogram String Session.
+• `SUDO_USER` - Telegram Account ID Used As Admin
+• `HNDLR` - Handler to run your userbot
 
 """
     await m.reply(REPO, disable_web_page_preview=True)
