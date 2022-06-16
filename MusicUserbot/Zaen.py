@@ -1,7 +1,7 @@
 from random import randint
 from pyrogram import Client, filters
 from config import HNDLR, bot as USER
-from MusicUserbot.helpers.decorators import authorized_users_only
+from AellyRbot.helpers.decorators import authorized_users_only
 from pyrogram.errors import UserAlreadyParticipant
 from pyrogram.raw.functions.phone import CreateGroupCall
 
@@ -13,13 +13,13 @@ async def join(client, message):
     try:
         link = await client.export_chat_invite_link(chat_id)
     except BaseException:
-        await message.reply("**Error:**\nTambahkan saya sebagai admin grup Anda!")
+        await message.reply("**Error:**\nAdd me as admin of your group!")
         return
     try:
         await USER.join_chat(link)
         await message.reply("**Userbot Joined**")
     except UserAlreadyParticipant:
-        await message.reply("**Userbot Udah join Disini**")
+        await message.reply("**Userbot Already joined Here**")
 
 
 @Client.on_message(filters.command(["openvcs"], prefixes=f"{HNDLR}"))
